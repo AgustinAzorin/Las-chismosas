@@ -38,3 +38,21 @@ npm run start:dev   # http://localhost:3000
 - `GET /api/shows` — proximas fechas
 - `GET /api/band` — integrantes
 - `POST /api/newsletter/subscribe` — `{ email: string }`
+
+## Deploy a Vercel
+
+NestJS no corre out-of-the-box en Vercel porque `app.listen()` no aplica en
+serverless. La adaptacion vive en `api/index.ts` (Express adapter + cache
+del app) y `vercel.json` (rutea todo a esa funcion e incluye `views/` y
+`public/` en el bundle).
+
+```bash
+# vercel detecta vercel.json automaticamente, no hace falta config extra
+vercel deploy
+```
+
+### Sobre el 308 en el dominio personalizado
+
+Es normal: Vercel responde 308 para forzar HTTPS o el redirect
+apex<->www configurado en el panel del dominio. Seguilo con `curl -L`
+o el navegador y vas a ver el 200 real.
