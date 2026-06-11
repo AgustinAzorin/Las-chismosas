@@ -12,4 +12,6 @@ export interface Show {
 export interface ShowView extends Show {
   isEntradas: boolean;
   isAgotado: boolean;
+  /** Fecha ISO (YYYY-MM-DD) de la próxima ocurrencia, para datos estructurados. */
+  isoDate: string;
 }
