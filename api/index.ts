@@ -2,6 +2,7 @@ import { NestFactory } from '@nestjs/core';
 import { ExpressAdapter, NestExpressApplication } from '@nestjs/platform-express';
 import express, { Express, Request, Response } from 'express';
 import { join } from 'path';
+import 'hbs';
 import { AppModule } from '../src/app.module';
 
 let cachedServer: Express | null = null;
