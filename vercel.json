@@ -5,7 +5,7 @@
       "src": "api/index.ts",
       "use": "@vercel/node",
       "config": {
-        "includeFiles": ["views/**", "public/**", "src/**"]
+        "includeFiles": ["views/**", "public/**", "public/.image-slots.state.json", "src/**"]
       }
     }
   ],
