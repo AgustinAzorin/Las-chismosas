@@ -19,7 +19,7 @@ async function bootstrap(): Promise<Express> {
   // (node dist/main.js) the cwd is the repo root and the same paths still
   // resolve, so one base works in both worlds.
   const root = process.cwd();
-  app.useStaticAssets(join(root, 'public'));
+  app.useStaticAssets(join(root, 'public'), { dotfiles: 'allow' });
   app.setBaseViewsDir(join(root, 'views'));
   app.setViewEngine('hbs');
 
